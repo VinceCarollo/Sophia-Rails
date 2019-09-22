@@ -26,13 +26,17 @@ Please reference the user stories to understand the full functionality of SOPHIA
 SOPHIA is an A11Y app with a large focus on accessibility.
 
 ## Technologies Used
-  - [Ruby](https://ruby-doc.org/)
   - [Ruby On Rails](https://guides.rubyonrails.org/)
   - [PostgreSQL](https://www.postgresql.org/)
   - [RSpec-Rails](https://github.com/rspec/rspec-rails)
   - [Travis CI](https://travis-ci.org)  [![Build Status](https://travis-ci.org/n-flint/Sophia-Rails.svg?branch=master)](https://travis-ci.org/n-flint/Sophia-Rails)
   - [Docker](https://www.docker.com)
   - [FFmpeg](https://ffmpeg.org/)
+
+## Versioning
+
+- Ruby: 2.4.1
+- Rails: 5.2.3
 
 ## Learning Goals
 
@@ -49,6 +53,9 @@ This is a unique opportunity that presents some valuable goals:
 * Focus on communication between front-end and back-end teams in order to complete and deploy features that have been outlined by the project spec
 
 ## Setup
+
+**This app is [Dockerized](https://docs.docker.com/)**
+
 1. Clone this repository
 ```
 cd Sophia-Rails
