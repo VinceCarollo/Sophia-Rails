@@ -9,7 +9,7 @@ class Api::V1::ListsController < ApplicationController
 
   def show
     list = List.find(params[:id])
-    render json: list
+    render json: ListSerializer.new(list)
   rescue ActiveRecord::RecordNotFound
     render json: { message: 'List Not Found' }, status: 404
   end
@@ -17,7 +17,7 @@ class Api::V1::ListsController < ApplicationController
   def create
     list = List.new(list_params)
     if list.save
-      render json: list
+      render json: ListSerializer.new(list)
     else
       render json: list.errors, status: 400
     end
@@ -26,7 +26,7 @@ class Api::V1::ListsController < ApplicationController
   def update
     list = List.find(params[:id])
     list.update_attributes({name: params[:name]})
-    render json: list
+    render json: ListSerializer.new(list)
   rescue ActiveRecord::RecordNotFound
     render json: { message: 'List Not Found' }, status: 404
   end
@@ -47,9 +47,9 @@ class Api::V1::ListsController < ApplicationController
 
   def render_lists(client, caretaker)
     if client
-      render json: client.lists
+      render json: client.lists.map{|list| ListSerializer.new(list)}
     elsif caretaker
-      render json: caretaker.lists
+      render json: caretaker.lists.map{|list| ListSerializer.new(list)}
     else
       render json: { message: 'Not Found' }, status: 404
     end
