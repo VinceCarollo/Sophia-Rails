@@ -42,7 +42,7 @@ class Api::V1::ListsController < ApplicationController
   private
 
   def list_params
-    params.permit(:name, :client_id, :caretaker_id)
+    params.permit(:name, :client_id, :caretaker_id, :created_for)
   end
 
   def render_lists(client, caretaker)
