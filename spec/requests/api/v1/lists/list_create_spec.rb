@@ -8,7 +8,8 @@ RSpec.describe 'Lists Create API' do
     list = {
       name: 'Groceries',
       client_id: client.id,
-      caretaker_id: caretaker.id
+      caretaker_id: caretaker.id,
+      created_for: 'caretaker'
     }
 
     headers = {
@@ -25,6 +26,7 @@ RSpec.describe 'Lists Create API' do
     new_list = List.last
 
     expect(list_data[:name]).to eq(list[:name])
+    expect(list_data[:created_for]).to eq(list[:created_for])
     expect(list_data[:client_id]).to eq(list[:client_id])
     expect(list_data[:client_name]).to eq(client.name)
     expect(list_data[:caretaker_name]).to eq(caretaker.name)
