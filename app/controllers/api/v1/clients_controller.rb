@@ -54,6 +54,10 @@ class Api::V1::ClientsController < ApplicationController
     end
   end
 
+  def index
+    render json: Client.all.map{|client| ClientSerializer.new(client)}
+  end
+
   private
 
   def client_params

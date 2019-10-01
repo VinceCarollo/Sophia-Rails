@@ -5,7 +5,7 @@ Rails.application.routes.draw do
       post '/speech', to: 'speech#index'
       post '/login', to: 'login#create'
 
-      resources :clients, only: [:show, :update, :create, :destroy]
+      resources :clients, only: [:show, :update, :create, :destroy, :index]
 
       resources :caretakers, only: [:create, :update, :destroy, :show, :index]
 
