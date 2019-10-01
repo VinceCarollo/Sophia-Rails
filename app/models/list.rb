@@ -4,4 +4,8 @@ class List < ApplicationRecord
   has_many :tasks, dependent: :destroy
 
   validates_presence_of :name
+
+  validates :created_for, inclusion: { in: ['client', 'caretaker'] }
+
+  enum created_for: [:client, :caretaker]
 end
