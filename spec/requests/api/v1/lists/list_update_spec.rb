@@ -26,6 +26,7 @@ RSpec.describe 'Lists Update API' do
     expect(updated_list_data[:name]).to eq(body[:name])
     expect(updated_list_data[:client_id]).to eq(list.client.id)
     expect(updated_list_data[:caretaker_id]).to eq(list.caretaker.id)
+    expect(updated_list_data).to have_key(:created_for)
     expect(updated_list_data).to have_key(:created_at)
     expect(updated_list_data).to have_key(:caretaker_name)
     expect(updated_list_data).to have_key(:client_name)

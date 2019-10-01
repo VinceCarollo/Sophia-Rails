@@ -30,6 +30,7 @@ RSpec.describe 'Lists Read API' do
     expect(lists.first).to have_key(:client_name)
     expect(lists.first).to have_key(:caretaker_name)
     expect(lists.first).to have_key(:caretaker_id)
+    expect(lists.first).to have_key(:created_for)
     expect(lists.first).to have_key(:created_at)
     expect(lists.first).to have_key(:updated_at)
   end
@@ -61,6 +62,7 @@ RSpec.describe 'Lists Read API' do
     expect(lists.first).to have_key(:name)
     expect(lists.first).to have_key(:client_id)
     expect(lists.first).to have_key(:caretaker_id)
+    expect(lists.first).to have_key(:created_for)
     expect(lists.first).to have_key(:created_at)
     expect(lists.first).to have_key(:updated_at)
   end
@@ -83,6 +85,7 @@ RSpec.describe 'Lists Read API' do
     expect(list_data[:name]).to eq(list.name)
     expect(list_data[:client_id]).to eq(list.client_id)
     expect(list_data[:caretaker_id]).to eq(list.caretaker_id)
+    expect(list_data).to have_key(:created_for)
     expect(list_data).to have_key(:created_at)
     expect(list_data).to have_key(:updated_at)
   end

@@ -476,6 +476,7 @@ Successful Response:
         "client_id": 1,
         "created_at": "2019-09-21T18:56:50.716Z",
         "updated_at": "2019-09-21T18:56:50.716Z",
+        "created_for": "caretaker",
         "caretaker_id": 1
     },
     {
@@ -484,6 +485,7 @@ Successful Response:
         "client_id": 1,
         "created_at": "2019-09-21T18:56:50.746Z",
         "updated_at": "2019-09-21T18:56:50.746Z",
+        "created_for": "caretaker",
         "caretaker_id": 1
     }
 ]
@@ -510,6 +512,7 @@ Successful Response:
     "client_id": 1,
     "created_at": "2019-09-21T18:56:50.716Z",
     "updated_at": "2019-09-21T18:56:50.716Z",
+    "created_for": "caretaker",
     "caretaker_id": 1
 }
 ```
@@ -532,9 +535,11 @@ Accept: application/json
 {
   name: 'Groceries',
   client_id: 3,
-  caretaker_id: 6
+  caretaker_id: 6,
+  created_for: 'caretaker'
 }
 ```
+*created_for can be 'caretaker' or 'client' only*
 
 Successful Response:
 ```json
@@ -544,6 +549,7 @@ Successful Response:
   "client_id": 4227,
   "created_at": "2019-09-24T23:21:44.326Z",
   "updated_at": "2019-09-24T23:21:44.326Z",
+  "created_for": "caretaker",
   "caretaker_id": 2759
 }
 ```
@@ -579,6 +585,7 @@ Successful Response:
   "client_id": 4227,
   "created_at": "2019-09-24T23:21:44.326Z",
   "updated_at": "2019-09-24T23:21:44.326Z",
+  "created_for": "caretaker",
   "caretaker_id": 2759
 }
 ```

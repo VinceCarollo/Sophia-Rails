@@ -7,6 +7,7 @@ class ListSerializer
     @updated_at = list.updated_at
     @caretaker_id = list.caretaker_id
     @client_name = list.client.name
+    @created_for = list.created_for
     @caretaker_name = get_optional_caretaker(list.caretaker)
   end
 
