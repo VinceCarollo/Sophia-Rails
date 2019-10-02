@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
   namespace :api do
     namespace :v1 do
-      post '/speech', to: 'speech#index'
+      post '/speech', to: 'speech#create'
       post '/login', to: 'login#create'
 
       resources :clients, only: [:show, :update, :create, :destroy, :index]
