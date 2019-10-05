@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_11_021927) do
+ActiveRecord::Schema.define(version: 2019_10_01_010948) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 2019_09_11_021927) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "caretaker_id"
+    t.integer "created_for"
     t.index ["caretaker_id"], name: "index_lists_on_caretaker_id"
     t.index ["client_id"], name: "index_lists_on_client_id"
   end
@@ -60,11 +61,12 @@ ActiveRecord::Schema.define(version: 2019_09_11_021927) do
   create_table "tasks", force: :cascade do |t|
     t.string "name"
     t.text "description"
-    t.boolean "completed"
+    t.boolean "completed", default: false
     t.bigint "list_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.datetime "due_date"
+    t.integer "priority", default: 1
     t.index ["list_id"], name: "index_tasks_on_list_id"
   end
 

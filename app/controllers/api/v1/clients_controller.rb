@@ -1,5 +1,6 @@
 class Api::V1::ClientsController < ApplicationController
-  protect_from_forgery with: :null_session
+  protect_from_forgery unless: -> { request.format.json? }
+
   wrap_parameters :client, include: [:username,
                                      :password,
                                      :password_confirmation,
@@ -51,6 +52,10 @@ class Api::V1::ClientsController < ApplicationController
     else
       render json: new_client.errors, status: 400
     end
+  end
+
+  def index
+    render json: Client.all.map{|client| ClientSerializer.new(client)}
   end
 
   private
