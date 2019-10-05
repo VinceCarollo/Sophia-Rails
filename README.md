@@ -51,7 +51,7 @@ This is a unique opportunity that presents some valuable goals:
 ## Setup
 1. Clone this repository
 ```
-cd Sophia-Rails
+cd sophia
 bundle install
 rails db:create
 rails db:migrate
@@ -65,7 +65,7 @@ rails server
 2. Make sure docker is running
 
 ```
-cd Sophia-Rails
+cd sophia
 git checkout dockerize
 docker-compose build
 docker-compose run web rails db:{create,migrate,seed}
